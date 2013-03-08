@@ -27,10 +27,10 @@
  *   in hook scripts
  */
 chdir(getenv('ZS_APPLICATION_BASE_DIR'));
-$success = exec("/usr/local/zend/bin/php composer.phar version > /tmp/deploy.log");
+$success = exec("/usr/local/zend/bin/php composer.phar version", $out, $ret);
 #exec("ls . > /tmp/deploy.log");
 #exec("echo 'foo' >> /tmp/deploy.log");
-#file_put_contents("/tmp/deploy.log", "/usr/local/zend/bin/php ".$composer." install");
+file_put_contents("/tmp/deploy.log", $out . ' - ' . $ret);
 if ($success === false) {
     exit(1);
 }
