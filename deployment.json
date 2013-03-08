@@ -1,3 +1,4 @@
 {
-    "docroot":"public/"
+    "docroot":"public",
+    "scriptsdir":"scripts"
 }
