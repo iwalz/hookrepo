@@ -25,3 +25,4 @@
  *   empty. This is useful to detect update scenarios and handle upgrades / downgrades
  *   in hook scripts
  */  
+exit(1);
