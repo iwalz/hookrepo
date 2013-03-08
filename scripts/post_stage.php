@@ -27,7 +27,7 @@
  *   in hook scripts
  */
 $composer = getenv('ZS_APPLICATION_BASE_DIR').'/composer.phar';
-$success = exec("ls ".$composer." > /tmp/deploy.log", $retval);
+$success = exec($composer." install");
 #file_put_contents("/tmp/deploy.log", "/usr/local/zend/bin/php ".$composer." install");
 if ($success === false) {
     exit(1);
