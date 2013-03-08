@@ -4,11 +4,11 @@
  * to the application root now.
  */
 chdir(dirname(__DIR__));
-#echo file_get_contents("/tmp/deploy.log");
+echo file_get_contents("/tmp/deploy.log");
 
 
 // Setup autoloading
-require 'init_autoloader.php';
+#require 'init_autoloader.php';
 
 // Run the application!
-Zend\Mvc\Application::init(require 'config/application.config.php')->run();
+#Zend\Mvc\Application::init(require 'config/application.config.php')->run();
