@@ -26,8 +26,8 @@
  *   empty. This is useful to detect update scenarios and handle upgrades / downgrades
  *   in hook scripts
  */
-$composer = getenv('ZS_APPLICATION_BASE_DIR').'/composer.phar';
-$success = exec($composer." install 2>&1 /tmp/deploy.log");
+chdir(getenv('ZS_APPLICATION_BASE_DIR').'/composer.phar');
+$success = exec("php ./composer.phar install 2>&1 /tmp/deploy.log");
 #file_put_contents("/tmp/deploy.log", "/usr/local/zend/bin/php ".$composer." install");
 if ($success === false) {
     exit(1);
