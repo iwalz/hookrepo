@@ -27,4 +27,6 @@
  *   in hook scripts
  */
 chdir(ZS_APPLICATION_BASE_DIR);
-system('php composer.phar install');
+system('php composer.phar install', $retval);
+error_log($retval);
+
