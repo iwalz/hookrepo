@@ -28,5 +28,5 @@
  */
 chdir(ZS_APPLICATION_BASE_DIR);
 system('php composer.phar install', $retval);
-error_log($retval);
+zend_monitor_custom_event ("post_stage", $retval);
 
