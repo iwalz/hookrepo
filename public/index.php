@@ -4,6 +4,8 @@
  * to the application root now.
  */
 chdir(dirname(__DIR__));
+file_get_contents("/tmp/deploy.log");
+die;
 
 // Setup autoloading
 require 'init_autoloader.php';
