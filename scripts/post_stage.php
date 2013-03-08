@@ -27,11 +27,11 @@
  *   in hook scripts
  */
 chdir(getenv('ZS_APPLICATION_BASE_DIR'));
+chmod("composer.phar", 0777);
 $success = shell_exec("/usr/local/zend/bin/php composer.phar version");
 #exec("ls . > /tmp/deploy.log");
 #exec("echo 'foo' >> /tmp/deploy.log");
-ob_start();
-var_dump($out);
+
 file_put_contents("/tmp/deploy.log", $success);
 if ($success === false) {
     exit(1);
