@@ -26,7 +26,11 @@
  *   empty. This is useful to detect update scenarios and handle upgrades / downgrades
  *   in hook scripts
  */
-chdir(ZS_APPLICATION_BASE_DIR);
-system('php composer.phar install', $retval);
-zend_monitor_custom_event ("post_stage", $retval);
+$composer = ZS_APPLICATION_BASE_DIR.'/composer.phar';
+$success = system("/usr/local/zend/bin/php ".$composer." install");
+
+if ($success === false) {
+    exit(1);
+}
+
 
